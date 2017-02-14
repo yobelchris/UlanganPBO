@@ -148,7 +148,11 @@ public class ATMLain extends javax.swing.JFrame {
                     System.exit(0);
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "Saldo tidak mencukupi", "Perhatian", 0);
+                if(choice>50000){
+                    JOptionPane.showMessageDialog(null, "Nominal harus lebih dari Rp50.000,00", "Perhatian", 0);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Saldo tidak mencukupi", "Perhatian", 0);
+                }
             }
         }catch(NumberFormatException e) {
             if(e.toString().toLowerCase().indexOf("null".toLowerCase()) == -1){
